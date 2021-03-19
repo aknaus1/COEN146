@@ -1,0 +1,27 @@
+# Name: Andrew Knaus
+# Date: 1 - 7 - 2021
+# Title: Lab1 – observations
+# Description: Record observations
+
+Step 1: Easy copy and paste
+Step 2: Compiled program using gcc part1-4.c -o program1
+Step 3: Run program with executable ./program1
+    Results in segmentation fault because the program needs an argument
+Step 4: Rerun program with executable and argument ./program1 3000
+    argument is delay time in microseconds
+    a) repeat with arguments 500 and 5000
+        500 runs faster
+Step 5: Recreated with threads
+Step 6 & 7: Imported math.h for pow function, and created functions factorial and sum
+    Results:
+        Circuit switching scenario
+            6a: 10
+        Packet switching scenario
+            7a: 0.100000
+            7b: 0.900000
+            7c: 0.150095
+            7d: 0.015009
+            7e: 0.285180
+            7f: 3.8742e-11
+            7g: 3.57891e-06
+            7h: 3.50969e-07

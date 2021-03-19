@@ -1,0 +1,78 @@
+/*
+# Name: Andrew Knaus
+# Date: 1 - 21 - 2021
+# Title: Lab3 – Results
+# Description: Results and Observations
+*/
+
+Notes:
+    "route" (linux) -> "netstat -rn" (mac)
+    "arp" (linux) -> "arp -a" (mac)
+
+step 2:
+    ping www.harvard.edu (USA)
+        10 packets transmitted, 10 packets received, 0.0% packet loss
+        round-trip min/avg/max/stddev = 10.954/15.722/29.514/4.909 ms
+
+        Packet Loss: 0.0%
+        Round-Trip-Time (AVG): 15.722 ms
+
+    ping www.heidelberg.edu (Germany)
+        10 packets transmitted, 10 packets received, 0.0% packet loss
+        round-trip min/avg/max/stddev = 11.727/21.213/30.436/5.708 ms
+
+        Packet Loss: 0.0%
+        Round-Trip-Time (AVG): 21.213 ms
+
+    ping en.snu.ac.kr (Korea)
+        10 packets transmitted, 10 packets received, 0.0% packet loss
+        round-trip min/avg/max/stddev = 14.786/28.813/49.902/8.834 ms
+
+        Packet Loss: 0.0%
+        Round-Trip-Time (AVG): 28.813 ms
+    
+    The places that are further away have a higher ping RTT.
+
+Step 3:
+    program: step3.c
+    output: 3a: 143 ms, 3b: 707 ms, 3c Persistent: 190 ms, 3c Non-Persistent: 237 ms
+
+Step 4:
+    telnet gaia.cs.umass.edu 80
+        GET /kurose_ross/interactive/index.php HTTP/1.1
+        Host: gaia.cs.umass.edu
+
+     What is the name of the file that is being retrieved in this GET message?
+        index.php
+     What version of HTTP is the client running?
+        HTTP 1.1
+     What formats of text and images, if any?
+        html, javascript, .jpg image
+
+Step 5:
+    telnet www.harvard.edu 80 (North America)
+        Connection successful
+        Ran:    GET /index.html HTTP/1.1
+                HOST: www.harvard.edu
+        Result: File moved permanently
+
+    telnet www.harvard.edu 3389 (North America)
+        Connection unsuccessful
+
+    telnet www.heidelberg.edu 80
+        Connection successful
+        Ran:    GET /index.html HTTP/1.1
+                HOST: www.heidelberg.edu
+        Result: File moved permanently
+
+    telnet www.heidelberg.edu 3389
+        Connection unsuccessful
+
+    telnet en.snu.ac.kr 80
+        Connection successful 
+        Ran:    GET /index.html HTTP/1.1
+                HOST: www.heidelberg.edu
+        Result: File moved permanently
+
+    telnet en.snu.ac.kr 3389
+        Connection unsuccessful
